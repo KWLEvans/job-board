@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>Lookit: Jobs!</title>
+    </head>
+    <body>
+        <div>
+            <h1>Oh, hello, it's you. Welcome back. Here are those lovely jobs I promised you. XOXO Danny Boy</h1>
+            <ul>
+                {% for job in jobs %}
+                    <li><strong>Job Title:</strong> {{ job.get('title') }}</li>
+                    <li><strong>Job Description:</strong> {{ job.get('description') }}</li>
+                    <li><strong>Contact Information:</strong>
+                        <ul>
+                            <li><strong>Name:</strong> {{ job.get('contact').get('name') }}</li>
+                            <li><strong>Email:</strong> {{ job.get('contact').get('email') }}</li>
+                            <li><strong>Phone:</strong> {{ job.get('contact').get('phone') }}</li>
+                        </ul>
+                    </li>
+                {% endfor %}
+            </ul>
+            <a href='/'><button>Go on back, now</button></a>
+        </div>
+    </body>
+</html>
